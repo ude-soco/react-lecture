@@ -23,7 +23,7 @@ function App() {
   });
   // ** HTML/CSS *********************************
   const [nameHTML, setNameHTML] = useState(
-    <h4>HTML Counter Name</h4>
+    <h4 style={{color: "red"}}>HTML Counter Name</h4>
   );
   // *********************************************
 
@@ -34,6 +34,12 @@ function App() {
 
       {/* // TODO: Comment line 33 and uncomment line 36 below */}
       {/* {nameHTML} */}
+
+      {/* // TODO: Comment line 33 and uncomment line 38 below */}
+      {/* {nameArray.map((name, index) => <h4 key={index}>{name}</h4>)} */}
+
+      {/* // TODO: Comment line 33 and uncomment line 42 below */}
+      {/* {Object.values(nameObject).map((name, index) => <h4 key={index}>{name}</h4>)} */}
 
       {/* // ** Displays the count value ************** */}
       <h1>{count}</h1>
