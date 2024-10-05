@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, 
+      initial-scale=1.0"
+    />
+    <title>React Lecture</title>
+    <style></style>
+  </head>
+  <body>
+    <h2>Grocery List (DOM)</h2>
+
+    <ul id="groceryList"></ul>
+
+    <p>Enter item</p>
+
+    <input type="text" id="input" />
+
+    <button id="button" onclick="addItem()">Add</button>
+  </body>
+  <script>
+    Array.prototype.myPush = function (...a) {
+      this.push(a[0]);
+      init();
+    };
+
+    const display = document.getElementById("groceryList");
+    const button = document.querySelector("#button");
+
+    let groceryList = ["banana", "oats", "milk", "chia seeds"];
+
+    const init = function () {
+      document.getElementById("groceryList").innerHTML = "";
+      groceryList.sort().forEach((fruit) => {
+        let item = document.createElement("li");
+        item.textContent = fruit;
+        document.getElementById("groceryList").appendChild(item);
+      });
+    };
+
+    const addItem = function () {
+      groceryList.myPush(document.getElementById("input").value);
+    };
+
+    init();
+  </script>
+</html>
+
+<!-- ******************************************************** -->
+<!-- ** Use JavaScript in browser to manipulate DOM ********* -->
+<!-- ******************************************************** -->
+<!-- ** Find node with h1 tag ******************************* -->
+<!-- const header = document.querySelector("h1"); -->
+<!-- console.log(header); -->
+
+<!-- ** Create a new node with p tag *********************** -->
+<!-- const paragraph = document.createElement("p"); -->
+<!-- paragraph.textContent = "React Lecture"; -->
+
+<!-- ** Append it to the document body ********************* -->
+<!-- document.body.appendChild(paragraph); -->

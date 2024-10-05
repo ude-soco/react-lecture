@@ -1,14 +1,9 @@
-// *********************************************
-// ** Use JavaScript to manipulate DOM *********
-// *********************************************
-// ** Find node with h1 tag ********************
-// const header = document.querySelector("h1");
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
 
-// console.log(header);
-
-// ** Create a new node with p tag *************
-// const paragraph = document.createElement("p");
-// paragraph.textContent = "React Lecture";
-
-// ** Append it to the document body ***********
-// document.body.appendChild(paragraph);
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
