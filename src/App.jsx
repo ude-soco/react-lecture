@@ -7,11 +7,11 @@ import React, { useState } from "react";
 //   constructor(props) {
 //     super(props);
 //     this.state = {
-//       count: 7,
+//       groceryItem: "apple",
 //     };
 //   }
 //   render() {
-//     return <h1>{this.state.count}</h1>;
+//     return <h1>{this.state.groceryItem}</h1>;
 //   }
 // }
 
@@ -19,8 +19,8 @@ import React, { useState } from "react";
 // * Functional based component
 // ****************************************
 function App(props) {
-  const [count, setCount] = useState(7);
-  return <h1>{count}</h1>;
+  const [groceryItem, setGroceryItem] = useState("apple");
+  return <h1>{groceryItem}</h1>;
 }
 
 export default App;
