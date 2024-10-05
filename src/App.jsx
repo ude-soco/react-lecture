@@ -10,16 +10,6 @@ function App() {
     "chia seeds",
   ]);
 
-  // ** Custom function to add an item ***********************
-  const handleAddItem = () => {
-    setGroceryList((prevState) => [...prevState, groceryItem]);
-  };
-
-  // ** Custom function with parameters to add an item *******
-  const handleAddFruit = (fruit) => {
-    setGroceryList((prevState) => [...prevState, fruit]);
-  };
-
   return (
     <>
       <div>
@@ -46,18 +36,6 @@ function App() {
           }
         >
           Add
-        </button>
-
-        {/* // ** Add grocery item with a custom function ******* */}
-        <button onClick={handleAddItem}>Add</button>
-      </div>
-      <div style={{ paddingTop: 8 }}>
-        {/* // ** Button to add fruits ******* */}
-        <button onClick={() => handleAddFruit("apple")}>
-          Add orange
-        </button>
-        <button onClick={() => handleAddFruit("kiwi")}>
-          Add Kiwi
         </button>
       </div>
     </>
