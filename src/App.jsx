@@ -10,13 +10,9 @@ function App() {
     "chia seeds",
   ]);
 
-  console.log(useState("apple"));
-
   return (
     <>
-      <h2 style={{ color: "red" }}>Grocery List</h2>
-
-      {React.createElement("h2", { style: { color: "red" } }, "Grocery List")}
+      <h2>Grocery List</h2>
 
       <ul>
         {groceryList.sort().map((item, index) => (
