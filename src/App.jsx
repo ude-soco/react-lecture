@@ -1,66 +1,64 @@
 import { useState } from "react";
 
 function App() {
-  // *********************************************
-  // ** Create a state using useState hook *******
-  // *********************************************
   // ** String type ******************************
-  const [name, setName] = useState("Simple Counter");
-
-  // ** Number ***********************************
-  const [count, setCount] = useState(0);
+  const [groceryItem, setGroceryItem] = useState("apple");
 
   // ** Array ************************************
-  const [nameArray, setNameArray] = useState([
-    "Awesome counter",
-    "Extraordinary Counter",
+  const [groceryList, setGroceryList] = useState([
+    "banana",
+    "oats",
+    "milk",
+    "chia seeds",
   ]);
+
+  // ** Number ***********************************
+  const [countItems, setCountItems] = useState(0);
 
   // ** Objects **********************************
   const [nameObject, setNameObject] = useState({
-    primary: "Awesome counter",
-    secondary: "Extraordinary Counter",
+    primary: "Awesome grocery list",
+    secondary: "Description of the grocery list",
   });
+
   // ** HTML/CSS *********************************
   const [nameHTML, setNameHTML] = useState(
-    <h4 style={{color: "red"}}>HTML Counter Name</h4>
+    <h2 style={{ color: "red" }}>HTML Grocery List</h2>
   );
   // *********************************************
 
   return (
     <>
-      {/* // ** Displays the counter name ************* */}
-      <h4>{name}</h4>
+      <h2>Grocery List</h2>
 
-      {/* // TODO: Comment line 33 and uncomment line 36 below */}
+      {/* // TODO: Comment line 32 and uncomment line 34 below */}
       {/* {nameHTML} */}
 
-      {/* // TODO: Comment line 33 and uncomment line 38 below */}
-      {/* {nameArray.map((name, index) => <h4 key={index}>{name}</h4>)} */}
+      {/* // TODO: Comment line 32 and uncomment line 37 below */}
+      {/* {Object.values(nameObject).map((name, index) => <h3 key={index}>{name}</h3>)} */}
 
-      {/* // TODO: Comment line 33 and uncomment line 42 below */}
-      {/* {Object.values(nameObject).map((name, index) => <h4 key={index}>{name}</h4>)} */}
+      <ul>
+        {groceryList.sort().map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
 
-      {/* // ** Displays the count value ************** */}
-      <h1>{count}</h1>
+      <p>Enter item</p>
 
-      {/* // ** Button to decrease count ************* */}
-      <button onClick={() => setCount(count + 1)}>
-        Increase
+      {/* // ** Enter name of a grocery item **** */}
+      <input
+        value={groceryItem}
+        onChange={(event) => setGroceryItem(event.target.value)}
+      />
+
+      {/* // ** Button to add grocery item ******* */}
+      <button
+        onClick={() =>
+          setGroceryList((prevState) => [...prevState, groceryItem])
+        }
+      >
+        Add
       </button>
-
-      {/* // ** Button to increase count ************** */}
-      <button onClick={() => setCount(count - 1)}>
-        Decrease
-      </button>
-
-      {/* // ** Button to reset the count to zero ***** */}
-      <button onClick={() => setCount(0)}>
-        Reset
-      </button>
-
-      {/* // ** Input field to rename the counter ****** */}
-      <input onChange={(event) => setName(event.target.value)} />
     </>
   );
 }
