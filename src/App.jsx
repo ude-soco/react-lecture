@@ -1,48 +1,21 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 function App() {
   // *********************************************
   // ** Create a state using useState hook *******
   // *********************************************
-  // ** String type ******************************
   const [name, setName] = useState("Simple Counter");
-
-  // ** Number ***********************************
   const [count, setCount] = useState(0);
-
-  // ** Array ************************************
-  const [nameArray, setNameArray] = useState([
-    "Awesome counter",
-    "Extraordinary Counter",
-  ]);
-
-  // ** Objects **********************************
-  const [nameObject, setNameObject] = useState({
-    primary: "Awesome counter",
-    secondary: "Extraordinary Counter",
-  });
-  // ** HTML/CSS *********************************
-  const [nameHTML, setNameHTML] = useState(
-    <h4 style={{color: "red"}}>HTML Counter Name</h4>
-  );
-  // *********************************************
 
   return (
     <>
       {/* // ** Displays the counter name ************* */}
       <h4>{name}</h4>
 
-      {/* // TODO: Comment line 33 and uncomment line 36 below */}
-      {/* {nameHTML} */}
-
-      {/* // TODO: Comment line 33 and uncomment line 38 below */}
-      {/* {nameArray.map((name, index) => <h4 key={index}>{name}</h4>)} */}
-
-      {/* // TODO: Comment line 33 and uncomment line 42 below */}
-      {/* {Object.values(nameObject).map((name, index) => <h4 key={index}>{name}</h4>)} */}
-
       {/* // ** Displays the count value ************** */}
-      <h1>{count}</h1>
+      {/* <h1>{count}</h1> */}
+      {/* // ? Alternative to line 16: Babel transforms JSX to React Create Element for React */}
+      {React.createElement('h1', null, count)}
 
       {/* // ** Button to decrease count ************* */}
       <button onClick={() => setCount(count + 1)}>
