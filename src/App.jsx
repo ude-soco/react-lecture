@@ -49,7 +49,7 @@ function App() {
         </button>
 
         {/* // ** Add grocery item with a custom function ******* */}
-        <button onClick={handleAddItem}>Add</button>
+        <button onClick={handleAddItem}>Add (Function)</button>
       </div>
       <div style={{ paddingTop: 8 }}>
         {/* // ** Button to add fruits ******* */}
