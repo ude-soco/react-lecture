@@ -20,11 +20,17 @@ function App() {
   // ** Custom function to add an item ***********************
   const handleAddItem = () => {
     setGroceryList((prevState) => [...prevState, groceryItem]);
+    setGroceryItem("");
   };
 
   // ** Custom function with parameters to add an item *******
   const handleAddFruit = (fruit) => {
     setGroceryList((prevState) => [...prevState, fruit]);
+  };
+
+  const handleInputFruitName = (event) => {
+    const { value } = event.target;
+    setGroceryItem(value);
   };
 
   return (
@@ -38,12 +44,12 @@ function App() {
           ))}
         </ul>
 
-        <p>Enter item</p>
+        <p>Enter item: "{groceryItem}"</p>
 
         {/* // ** Enter name of a grocery item **** */}
         <input
           value={groceryItem}
-          onChange={(event) => setGroceryItem(event.target.value)}
+          onChange={(event) => handleInputFruitName(event)}
         />
 
         {/* // ** Button to add grocery item ******* */}
@@ -72,54 +78,6 @@ function App() {
           );
         })}
       </div>
-
-      {/* // ** Still issues related to redundancy ******* */}
-      {/* <div style={{ paddingTop: 8 }}>
-        <FruitButton
-          fruitName="apple"
-          fruitColor="red"
-          handleAddFruit={handleAddFruit}
-        />
-        <FruitButton
-          fruitName="kiwi"
-          fruitColor="green"
-          handleAddFruit={handleAddFruit}
-        />
-        <FruitButton
-          fruitName="papaya"
-          fruitColor="yellow"
-          handleAddFruit={handleAddFruit}
-        />
-        <FruitButton
-          fruitName="plum"
-          fruitColor="purple"
-          handleAddFruit={handleAddFruit}
-        />
-      </div> */}
-
-      {/* // ** Issues related to redundancy, handcoded, and flexibility  */}
-      {/* <div style={{ paddingTop: 8 }}>
-        <button 
-          onClick={() => handleAddFruit("apple")} 
-          style={{marginLeft: 4, marginRight: 4, backgroundColor: "orange"}}>
-          Add orange
-          </button>
-          <button 
-          onClick={() => handleAddFruit("kiwi")} 
-          style={{marginLeft: 4, marginRight: 4, backgroundColor: "green"}}>
-          Add Kiwi
-          </button>
-          <button 
-          onClick={() => handleAddFruit("papaya")} 
-          style={{marginLeft: 4, marginRight: 4, backgroundColor:  "yellow"}}>
-          Add Papaya
-          </button>
-          <button 
-          onClick={() => handleAddFruit("plum")} 
-          style={{marginLeft: 4, marginRight: 4, backgroundColor: "purple"}}>
-          Add Plum
-        </button>
-      </div> */}
     </>
   );
 }
