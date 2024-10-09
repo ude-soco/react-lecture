@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FruitButton from "./FruitButton";
 
 function App() {
   // ** Create a state using useState hook *******************
@@ -8,6 +9,12 @@ function App() {
     "oats",
     "milk",
     "chia seeds",
+  ]);
+  const [groceryListOptions, setGroceryListOptions] = useState([
+    { fruitName: "apple", color: "red" },
+    { fruitName: "kiwi", color: "green" },
+    { fruitName: "papaya", color: "yellow" },
+    { fruitName: "plum", color: "purple" },
   ]);
 
   // ** Custom function to add an item ***********************
@@ -51,15 +58,67 @@ function App() {
         {/* // ** Add grocery item with a custom function ******* */}
         <button onClick={handleAddItem}>Add (Function)</button>
       </div>
+
+      {/* // ** Button to add fruits ******* */}
       <div style={{ paddingTop: 8 }}>
-        {/* // ** Button to add fruits ******* */}
-        <button onClick={() => handleAddFruit("apple")}>
-          Add orange
-        </button>
-        <button onClick={() => handleAddFruit("kiwi")}>
-          Add Kiwi
-        </button>
+        {groceryListOptions.map((options, index) => {
+          return (
+            <FruitButton
+              fruitName={options.fruitName}
+              fruitColor={options.color}
+              handleAddFruit={handleAddFruit}
+            />
+          );
+        })}
       </div>
+
+      {/* // ** Still issues related to redundancy ******* */}
+      {/* <div style={{ paddingTop: 8 }}>
+        <FruitButton
+          fruitName="apple"
+          fruitColor="red"
+          handleAddFruit={handleAddFruit}
+        />
+        <FruitButton
+          fruitName="kiwi"
+          fruitColor="green"
+          handleAddFruit={handleAddFruit}
+        />
+        <FruitButton
+          fruitName="papaya"
+          fruitColor="yellow"
+          handleAddFruit={handleAddFruit}
+        />
+        <FruitButton
+          fruitName="plum"
+          fruitColor="purple"
+          handleAddFruit={handleAddFruit}
+        />
+      </div> */}
+
+      {/* // ** Issues related to redundancy, handcoded, and flexibility  */}
+      {/* <div style={{ paddingTop: 8 }}>
+        <button 
+          onClick={() => handleAddFruit("apple")} 
+          style={{marginLeft: 4, marginRight: 4, backgroundColor: "orange"}}>
+          Add orange
+          </button>
+          <button 
+          onClick={() => handleAddFruit("kiwi")} 
+          style={{marginLeft: 4, marginRight: 4, backgroundColor: "green"}}>
+          Add Kiwi
+          </button>
+          <button 
+          onClick={() => handleAddFruit("papaya")} 
+          style={{marginLeft: 4, marginRight: 4, backgroundColor:  "yellow"}}>
+          Add Papaya
+          </button>
+          <button 
+          onClick={() => handleAddFruit("plum")} 
+          style={{marginLeft: 4, marginRight: 4, backgroundColor: "purple"}}>
+          Add Plum
+        </button>
+      </div> */}
     </>
   );
 }
