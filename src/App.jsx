@@ -61,11 +61,12 @@ function App() {
 
       {/* // ** Button to add fruits ******* */}
       <div style={{ paddingTop: 8 }}>
-        {groceryListOptions.map((options, index) => {
+        {groceryListOptions.map((option, index) => {
           return (
             <FruitButton
-              fruitName={options.fruitName}
-              fruitColor={options.color}
+              key={index}
+              fruitName={option.fruitName}
+              fruitColor={option.color}
               handleAddFruit={handleAddFruit}
             />
           );
