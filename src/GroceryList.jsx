@@ -33,6 +33,53 @@ export default function GroceryList() {
     setGroceryItem(value);
   };
 
+  // * Variation 1: Without dependency array
+  // ? Uncomment the lines 38-41. Make sure to comment other useEffects
+  useEffect(() => {
+    // * This runs after every re-render
+    console.log("useEffect executed!");
+  });
+
+  // * Variation 2: Empty dependency array
+  // ? Uncomment the lines 45-48. Make sure to comment other useEffects
+  // useEffect(() => {
+  //   // * This runs after the component mounts
+  //   console.log("useEffect executed!");
+  // }, []);
+
+  // * Variation 3: Dependency array with value(s)
+  // ? Uncomment the lines 52-55. Make sure to comment other useEffects
+  // useEffect(() => {
+  //   // * This runs only when `groceryItem` changes
+  //   console.log("useEffect executed!");
+  // }, [groceryItem]);
+
+  // * Variation 4: Empty dependecy array and
+  // * clean up function
+  // ? Uncomment the lines 60-68. Make sure to comment other useEffects
+  // useEffect(() => {
+  //   // * This runs after the component mounts
+  //   console.log("useEffect executed!");
+
+  //   return () => {
+  //     // * This runs on unmount
+  //     console.log("Clean up function executed!");
+  //   };
+  // }, []);
+
+  // * Variation 5: Without dependecy array and
+  // * clean up function
+  // ? Uncomment the lines 73-81. Make sure to comment other useEffects
+  // useEffect(() => {
+  //   // * useEffect will show only execute,
+  //   // * regardless of any state updates.
+  //   console.log("useEffect executed!");
+  //   return () => {
+  //     // * This runs on unmount
+  //     console.log("Clean up function executed!");
+  //   };
+  // });
+
   return (
     <div>
       <div>
