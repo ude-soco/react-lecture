@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import FruitButton from "./FruitButton";
+
+const GroceryListContext = createContext({
+  handleAddFruit: () => {},
+});
 
 export default function GroceryList() {
   // ** Create a state using useState hook *******************
@@ -34,7 +38,7 @@ export default function GroceryList() {
   };
 
   return (
-    <div>
+    <GroceryListContext.Provider value={{ handleAddFruit }}>
       <div>
         <h2>Grocery List</h2>
 
@@ -73,11 +77,12 @@ export default function GroceryList() {
               key={index}
               fruitName={option.fruitName}
               fruitColor={option.color}
-              handleAddFruit={handleAddFruit}
             />
           );
         })}
       </div>
-    </div>
+    </GroceryListContext.Provider>
   );
 }
+
+export { GroceryListContext };

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GroceryListContext } from "./GroceryList";
 
 export default function FruitButton(props) {
-  const { fruitName, fruitColor, handleAddFruit } = props;
+  const { fruitName, fruitColor } = props;
+  const { handleAddFruit } = useContext(GroceryListContext);
   return (
     <button
       onClick={() => handleAddFruit(fruitName)}
