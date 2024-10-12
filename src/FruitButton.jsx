@@ -5,11 +5,11 @@ export default function FruitButton(props) {
   return (
     <button
       onClick={() => handleAddFruit(fruitName)}
-      style={{ 
-        marginLeft: 4, 
-        marginRight: 4, 
-        backgroundColor: fruitColor 
-    }}
+      style={{
+        marginLeft: 4,
+        marginRight: 4,
+        backgroundColor: fruitColor,
+      }}
     >
       Add {fruitName}
     </button>
