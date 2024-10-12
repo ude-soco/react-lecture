@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FruitButton from "./FruitButton";
 
 export default function GroceryList() {
