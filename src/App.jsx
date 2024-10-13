@@ -31,10 +31,10 @@ function App() {
     <>
       <h2>Grocery List</h2>
 
-      {/* // TODO: Comment line 32 and uncomment line 34 below */}
+      {/* // TODO: Comment line 32 and uncomment line 35 below */}
       {/* {nameHTML} */}
 
-      {/* // TODO: Comment line 32 and uncomment line 37 below */}
+      {/* // TODO: Comment line 32 and uncomment line 38 below */}
       {/* {Object.values(nameObject).map((name, index) => <h3 key={index}>{name}</h3>)} */}
 
       <ul>
