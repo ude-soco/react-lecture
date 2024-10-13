@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useParams, useLocation } from "react-router-dom";
 
 export default function News() {
+  const params = useParams();
+  const currentPath = useLocation();
+
   const [news, setNews] = useState([
     {
       header: "Fresh Finds: Seasonal Produce Spotlight!",
@@ -21,11 +25,27 @@ export default function News() {
         "Shopping local is a great way to get fresh, organic produce while supporting your community. Find your nearest farmers' market and enjoy farm-to-table freshness. Plus, it’s a great way to discover unique ingredients you might not find at big stores!",
     },
   ]);
+
   return (
     <>
       <div>
         <h2>News section</h2>
       </div>
+
+      {/* // ? Redirection using params */}
+      {params.id && (
+        <div>
+          <p>Redirection using params: {params.id}</p>
+        </div>
+      )}
+
+      {/* // ? Redirection using path */}
+      {currentPath.pathname == "/news/path" && (
+        <div>
+          <p>Redirection using path: {currentPath.pathname}</p>
+        </div>
+      )}
+
       {news.map((item, index) => (
         <div key={index} style={{ paddingBottom: 16 }}>
           <p>

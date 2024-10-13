@@ -12,6 +12,18 @@ export default function NavigationBar() {
         <button style={{ marginRight: 4 }} onClick={() => navigate("/news")}>
           News section
         </button>
+        <button
+          style={{ marginRight: 4 }}
+          onClick={() => navigate("/news/path")}
+        >
+          News section (Path)
+        </button>
+        <button
+          style={{ marginRight: 4 }}
+          onClick={() => navigate("/news/123")}
+        >
+          News section (Param)
+        </button>
       </div>
     </div>
   );
