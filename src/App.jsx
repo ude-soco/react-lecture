@@ -49,16 +49,17 @@ function App() {
         </button>
 
         {/* // ** Add grocery item with a custom function ******* */}
+        {/* <button onClick={() => handleAddItem()}>
+          Add (Function)
+        </button> */}
+
+        {/* // ** Simplified by removing arrow function syntax ******* */}
         <button onClick={handleAddItem}>Add (Function)</button>
       </div>
       <div style={{ paddingTop: 8 }}>
         {/* // ** Button to add fruits ******* */}
-        <button onClick={() => handleAddFruit("apple")}>
-          Add orange
-        </button>
-        <button onClick={() => handleAddFruit("kiwi")}>
-          Add Kiwi
-        </button>
+        <button onClick={() => handleAddFruit("apple")}>Add orange</button>
+        <button onClick={() => handleAddFruit("kiwi")}>Add Kiwi</button>
       </div>
     </>
   );
