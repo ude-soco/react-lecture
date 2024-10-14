@@ -58,7 +58,9 @@ function App() {
       </div>
       <div style={{ paddingTop: 8 }}>
         {/* // ** Button to add fruits ******* */}
-        <button onClick={() => handleAddFruit("apple")}>Add orange</button>
+        <button onClick={handleAddFruit("orange")}>
+          Add orange
+        </button>
         <button onClick={() => handleAddFruit("kiwi")}>Add Kiwi</button>
       </div>
     </>
