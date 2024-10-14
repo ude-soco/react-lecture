@@ -3,17 +3,17 @@ import React, { useState } from "react";
 // ****************************************
 // * Class based component
 // ****************************************
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      groceryItem: "apple",
-    };
-  }
-  render() {
-    return <h1>{this.state.groceryItem}</h1>;
-  }
-}
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       groceryItem: "apple",
+//     };
+//   }
+//   render() {
+//     return <h1>{this.state.groceryItem}</h1>;
+//   }
+// }
 
 // ****************************************
 // * Functional based component
