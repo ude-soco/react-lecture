@@ -1,8 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function NavigationBar() {
+  // * Use useNavigate hook to navigate between components
   const navigate = useNavigate();
+
+  // * Use useLocation hook to get current url info
+  const location = useLocation();
+  console.log(location.pathname);
+
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "center" }}>
