@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import GroceryList from "./GroceryList";
 import News from "./News";
@@ -16,13 +21,15 @@ function App() {
           {/* // ? Nested routes */}
           <Route path="/news">
             <Route index element={<News />} />
-            
+
             {/* // ? Nested route with predefined path */}
             <Route path="path" element={<News />} />
 
             {/* // ? Nested route with dynamic parameter */}
             <Route path=":id" element={<News />} />
           </Route>
+
+          <Route path="*" element={<Navigate to={"/"} replace />} />
         </Routes>
       </Router>
     </>
