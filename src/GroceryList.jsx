@@ -35,10 +35,10 @@ export default function GroceryList() {
 
   // * Variation 1: Without dependency array
   // ? Uncomment the lines 38-41. Make sure to comment other useEffects
-  useEffect(() => {
-    // * This runs after every re-render
-    console.log("useEffect executed!");
-  });
+  // useEffect(() => {
+  //   // * This runs after every re-render
+  //   console.log("useEffect executed!");
+  // });
 
   // * Variation 2: Empty dependency array
   // ? Uncomment the lines 45-48. Make sure to comment other useEffects
@@ -54,7 +54,7 @@ export default function GroceryList() {
   //   console.log("useEffect executed!");
   // }, [groceryItem]);
 
-  // * Variation 4: Empty dependecy array and
+  // * Variation 4: Empty dependency array and
   // * clean up function
   // ? Uncomment the lines 60-68. Make sure to comment other useEffects
   // useEffect(() => {
@@ -67,11 +67,11 @@ export default function GroceryList() {
   //   };
   // }, []);
 
-  // * Variation 5: Without dependecy array and
+  // * Variation 5: Without dependency array and
   // * clean up function
   // ? Uncomment the lines 73-81. Make sure to comment other useEffects
   // useEffect(() => {
-  //   // * useEffect will show only execute,
+  //   // * useEffect will execute,
   //   // * regardless of any state updates.
   //   console.log("useEffect executed!");
   //   return () => {
@@ -79,6 +79,20 @@ export default function GroceryList() {
   //     console.log("Clean up function executed!");
   //   };
   // });
+
+  
+  // ? Uncomment the lines 87-95. Make sure to comment other useEffects
+  // * Variation 6: With dependency array and
+  // * clean up function
+  useEffect(() => {
+    // * useEffect will execute, only if 
+    // * `groceryList` state changes.
+    console.log("useEffect executed!");
+    return () => {
+      // * This runs on unmount
+      console.log("Clean up function executed!");
+    };
+  }, [groceryList.length]);
 
   return (
     <div>
